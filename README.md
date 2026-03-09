@@ -1,8 +1,7 @@
 # 🇬🇧 → 🇫🇷 English to French Neural Machine Translation
 
-A high-quality Neural Machine Translation (NMT) system trained on the **WMT14 English–French dataset** using a **Transformer-based MarianMT architecture**.
-
-The project fine-tunes the pretrained `Helsinki-NLP/opus-mt-tc-big-en-fr` model and deploys an interactive translation demo using **Gradio + Hugging Face Spaces**.
+This project is upgrade from the [!Previous Model](https://github.com/AdityaKr015/NMT-Eng-to-French-Seq2Seq-Bahdanau-Attention).A high-quality Neural Machine Translation (NMT) system trained on the **WMT14 English–French dataset** using a **Transformer-based MarianMT architecture**.
+This project fine tunes the pretrained `Helsinki-NLP/opus-mt-tc-big-en-fr` model and deploys an interactive translation demo using **Gradio + Hugging Face Spaces**.
 
 ---
 
@@ -23,33 +22,30 @@ Transformer based sequence-to-sequence model:
 <img width="462" height="733" alt="model_architecture" src="https://github.com/user-attachments/assets/82e3ba84-d82a-4375-9b91-b99716689668" />
 
 
-Base model:
+### Base model:
 
 Helsinki-NLP/opus-mt-tc-big-en-fr
 
+## 📊 Dataset
 
----
+### Dataset: **WMT14 English-French**
 
-# 📊 Dataset
-
-Dataset: **WMT14 English-French**
-
-Initial dataset size:
+### Initial dataset size:
 
 40,836,715 sentence pairs
 
 
-Subset used for training:
+### Subset used for training:
 
 80,000 pairs
 
 
-After cleaning:
+### After cleaning:
 
 74,359 pairs
 
 
-Train / Validation / Test split:
+### Train / Validation / Test split:
 
 | Split | Samples |
 |------|--------|
@@ -57,11 +53,10 @@ Train / Validation / Test split:
 | Validation | 3,718 |
 | Test | 3,718 |
 
----
 
 # 🧹 Data Cleaning
 
-Filtering rules applied:
+### Filtering rules applied:
 
 - Remove sentences shorter than **3 words**
 - Remove sentences longer than **128 tokens**
@@ -70,9 +65,6 @@ Filtering rules applied:
 
 
 0.5 < length_ratio < 1.5
-
-
----
 
 # ⚙️ Training Configuration
 
@@ -88,19 +80,13 @@ Filtering rules applied:
 | FP16 | Enabled |
 | Beam Size | 8 |
 
-Training hardware:
+### Training hardware:
 
+Kaggel's Free Tesla P100 GPU
 
-Tesla P100 GPU
-
-
-Training time:
-
+### Training time:
 
 ~4.5 hours
-
-
----
 
 # 📈 Results
 
@@ -123,36 +109,29 @@ Training time:
 | chrF | **63.56** |
 | TER | 52.44 |
 
----
-
 # 📊 Training Curves
 
-Loss and BLEU progression during training:
+### Loss and BLEU progression during training:
 
 ![Training Curves](images/training_curves.png)
 
----
-
 # 📊 Dataset Statistics
 
-Sentence length distribution:
+### Sentence length distribution:
 
 ![Dataset Distribution](images/eda.png)
-
----
 
 # 🖥️ Interactive Demo
 
 The project includes a **Gradio interface** deployed on HuggingFace Spaces.
 
-Features:
+### Features:
 
 ✔ English → French translation  
 ✔ Beam search decoding  
 ✔ Attention visualization heatmap  
 
-Example:
-
+### Example:
 
 Input:
 The sun sets slowly over the horizon.
@@ -160,10 +139,7 @@ The sun sets slowly over the horizon.
 Output:
 Le soleil se couche lentement à l'horizon.
 
-
 The attention visualization helps interpret which source words influence each translated token.
-
----
 
 # 📦 Installation
 
@@ -171,7 +147,7 @@ The attention visualization helps interpret which source words influence each tr
 pip install -r requirements.txt
 ```
 
-Dependencies include:
+### Dependencies include:
 
 transformers
 datasets
@@ -181,18 +157,19 @@ sacrebleu
 gradio
 sentencepiece
 
-▶️ Run the App
+## ▶️ Run the App
+
 ```bash
 python app.py
 ```
 
 The app loads the model from HuggingFace Hub and launches a Gradio interface.
 
-The interface implementation is in:
+### The interface implementation is in:
 
 app.py
 
-Example from the translation pipeline:
+### Example from the translation pipeline:
 
 model.generate(
     num_beams=8,
@@ -203,7 +180,8 @@ The model is loaded from the HuggingFace model hub:
 
 https://huggingface.co/AdiKr25/En-fr-WMT14-41_Bleu-41_chrF-63
 
-📂 Project Structure
+# 📂 Project Structure
+
 NMT-English-French/
 │
 ├── app.py
@@ -220,7 +198,7 @@ NMT-English-French/
 └── results/
     └── training_summary.json
     
-🔬 Evaluation Metrics
+# 🔬 Evaluation Metrics
 
 Evaluation performed using:
 
@@ -232,8 +210,7 @@ Metrics computed using the evaluate and sacrebleu libraries.
 
 Training and evaluation pipeline code is available in the notebook:
 
-
-🔮 Future Improvements
+# 🔮 Future Improvements
 
 Possible improvements:
 
@@ -256,6 +233,3 @@ AI / ML Student
 
 Project created for learning Neural Machine Translation and Transformer training pipelines.
 
-
-That’s the part most people completely mess up.
-Sources
