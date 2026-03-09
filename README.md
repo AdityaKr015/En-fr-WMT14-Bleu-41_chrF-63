@@ -23,7 +23,7 @@ Model Hub: [![HuggingFace Model](https://img.shields.io/badge/🤗%20HuggingFace
 
 The full model training pipeline can be found here:
 
-[Open Notebook](notebook/nlp.ipynb)
+[Open Notebook](notebook/eng-to-french-transformers.ipynb)
 
 ## Project Overview
 
