@@ -43,25 +43,25 @@ Transformer based sequence-to-sequence model:
 
 ### Pipeline Workflow
 
-1. **Data Loading**: Load WMT14 (fr-en) translation pairs — 80,000 sampled from 40.8M available
-2. **Data Cleaning**:
+1. **Data Loading**:- Load WMT14 (fr-en) translation pairs — 80,000 sampled from 40.8M available
+2. **Data Cleaning**:-
    - Remove pairs shorter than 3 tokens per side
    - Filter by sentence length (max 128 words)
    - Length ratio filtering (EN/FR ratio kept between 0.5–1.5)
-3. **Preprocessing**:
+3. **Preprocessing**:-
    - Split data (90% train, 5% val, 5% test)
    - Tokenization with MarianTokenizer (SentencePiece)
    - Padding token replaced with -100 so loss ignores it
-4. **Training**:
+4. **Training**:-
    - Fine-tune `Helsinki-NLP/opus-mt-tc-big-en-fr` (232.7M params)
    - Mixed precision training (FP16 on GPU)
    - Cosine LR scheduler with 10% warmup
    - Label smoothing (0.1) for better generalization
    - Early stopping with patience=3
-5. **Evaluation**:
+5. **Evaluation**:-
    - BLEU, chrF, TER score computation on test set
    - Attention heatmap visualization per translation
-6. **Deployment**:
+6. **Deployment**:-
    - Model saved to Hugging Face Hub
    - Gradio web app served via Hugging Face Spaces
    
@@ -71,11 +71,11 @@ Helsinki-NLP/opus-mt-tc-big-en-fr (232.7M parameters)
 
 Vocab Size: 53,017 tokens
 
-Tokenizer: MarianTokenizer (SentencePiece)
+Tokenizer:- MarianTokenizer (SentencePiece)
 
 ## 📊 Dataset
 
-### Source: WMT14 fr-en (~40.8M pairs available; 80,000 sampled)
+### Source:- WMT14 fr-en (~40.8M pairs available; 80,000 sampled)
 
 ### Cleaning rules applied:
 
@@ -85,7 +85,7 @@ Tokenizer: MarianTokenizer (SentencePiece)
 - English/French ratio constraint
 - Length ratio between EN/FR kept between 0.5 and 1.5
 
-### Result: 74,359 clean pairs → split into Train / Val / Test (90 / 5 / 5)
+### Result:- 74,359 clean pairs → split into Train / Val / Test (90 / 5 / 5)
 
 | Split | Samples |
 |------|--------|
@@ -134,13 +134,13 @@ Tokenizer: MarianTokenizer (SentencePiece)
 | chrF | **63.56** |
 | TER | 52.44 |
 
-- BLEU Score: 41.76 on validation, 41.14 on test
-- chrF Score: 63.56 
-- TER: 52.44 (lower is better)
+- BLEU Score:- 41.76 on validation, 41.14 on test
+- chrF Score:- 63.56 
+- TER:- 52.44 (lower is better)
 
-A BLEU score above 40 is considered human readable, fluent translation,the model reliably produces natural French output that closely mirrors reference translations.
+A BLEU score above 40 is considered human readable, fluent translation,the model reliably produces natural French output with good understanding and grammar.
 
-Achieving this on just ~67k samples (out of 40M available) demonstrates that fine-tuning a strong pretrained model (Helsinki-NLP) can yield near professional quality even with limited data.
+Achieving this on just ~67k samples (out of 40M available) demonstrates that fine tuning a strong pretrained model (Helsinki-NLP) can results in near professional quality even with limited data.
 
 # 📊 Training Curves
 
@@ -164,16 +164,16 @@ The project includes a **Gradio interface** deployed on HuggingFace Spaces.
 
 ### Features:
 
-- English → French translation  
+- English to French translation  
 - Beam search decoding  
 - Attention visualization heatmap  
 
 ### Example:
 
-Input:
+Input:-
 The sun sets slowly over the horizon.
 
-Output:
+Output:-
 Le soleil se couche lentement à l'horizon.
 
 The attention visualization helps interpret which source words influence each translated token.
@@ -188,13 +188,13 @@ pip install -r requirements.txt
 
 ### Dependencies include:
 
-- `transformers`: Hugging Face transformers library
-- `torch`: PyTorch deep learning framework
-- `datasets`: Hugging Face datasets library
-- `sentencepiece`: Unsupervised tokenizer for subword segmentation
-- `sacrebleu`: BLEU score computation
-- `evaluate`: Hugging Face evaluation library for computing ML metrics
-- `gradio`: Web UI framework for deploying interactive ML demos
+- `transformers`:- Hugging Face transformers library
+- `torch`:- PyTorch deep learning framework
+- `datasets`:- Hugging Face datasets library
+- `sentencepiece`:- Unsupervised tokenizer for subword segmentation
+- `sacrebleu`:- BLEU score computation
+- `evaluate`:- Hugging Face evaluation library for computing ML metrics
+- `gradio`:- Web UI framework for deploying interactive ML demos
 
 ## ▶️ Run the App
 
@@ -209,14 +209,6 @@ The app loads the model from HuggingFace Hub and launches a Gradio interface.
 ```bash
 app.py
 ```
-
-### Example from the translation pipeline:
-
-model.generate(num_beams=8,max_length=256)
-
-The model is loaded from the HuggingFace model hub:
-
-https://huggingface.co/AdiKr25/En-fr-WMT14-41_Bleu-41_chrF-63
 
 # 📂 Project Structure
 ```
@@ -237,9 +229,9 @@ NMT-English-French/
 # 🔬 Evaluation Metrics
 
 Evaluation performed using:
-- `SacreBLEU` : Measures n-gram overlap between predicted and reference translations. Score of 40+ is considered fluent, human-readable translation
-- `chrF` : Character-level F-score, more sensitive to morphology and word endings. Score of 63.56 indicates strong character-level accuracy
-- `TER` : Translation Edit Rate — measures how many edits are needed to fix the prediction into the reference. Lower is better; 52.44 is competitive for EN→FR
+- `SacreBLEU` :- Measures n-gram overlap between predicted and reference translations. Score of 40+ is considered fluent, human-readable translation
+- `chrF` :- Character-level F-score, more sensitive to morphology and word endings. Score of 63.56 indicates strong character-level accuracy
+- `TER` :- Translation Edit Rate measures how many edits are needed to fix the prediction into the reference. Lower is better; 52.44 is competitive for EN→FR
 
 Metrics computed using the `evaluate` and `sacrebleu` libraries.
 Training and evaluation pipeline code is available in the notebook.
@@ -257,6 +249,9 @@ Expected improvement:
 
 +3 to +5 BLEU
 
+or I might build a Multilingual NMT with Sanskrit, Hinglish and Hindi translation
+in future 
+
 ### 📜 License
 
 MIT License
@@ -265,5 +260,5 @@ MIT License
 
 Aditya Kumar (AI / ML Student)
 
-Project created for learning Neural Machine Translation and Transformer training pipelines.
+I built this project for learning Neural Machine Translation and Transformers training pipelines.
 
