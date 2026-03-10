@@ -8,9 +8,9 @@ Fine-tuned Helsinki-NLP/opus-mt-tc-big-en-fr on WMT14 (fr-en) achieving 41.76 BL
 
 ## 🚀 Demo
 
-Live Demo: [![HuggingFace Space](https://img.shields.io/badge/🤗%20HuggingFace-Space-blue?style=for-the-badge)](https://huggingface.co/spaces/AdiKr25/En-fr-WMT14-41_Bleu-41_chrF-63)
+Live Demo: [![HuggingFace Space](https://img.shields.io/badge/🤗%20HuggingFace-Space-blue?style=for-the-badge)](AdiKr25/En-fr-WMT14_Bleu41_chrF63)
 
-Model Hub: [![HuggingFace Model](https://img.shields.io/badge/🤗%20HuggingFace-Space-blue?style=for-the-badge)](https://huggingface.co/AdiKr25/En-fr-WMT14-41_Bleu-41_chrF-63)
+Model Hub: [![HuggingFace Model](https://img.shields.io/badge/🤗%20HuggingFace-Space-blue?style=for-the-badge)](AdiKr25/En-fr-WMT14_Bleu41_chrF63)
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-orange?logo=pytorch)
