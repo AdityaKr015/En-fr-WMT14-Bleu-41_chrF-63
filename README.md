@@ -1,6 +1,6 @@
-# 🇬🇧 → 🇫🇷 English to French Neural Machine Translation
+# 🇬🇧 -> 🇫🇷 English to French Neural Machine Translation
 
-This project is upgrade version of [The previous Model](https://github.com/AdityaKr015/NMT-Eng-to-French-Seq2Seq-Bahdanau-Attention). 
+This project is upgrade version of [The Previous Model](https://github.com/AdityaKr015/NMT-Eng-to-French-Seq2Seq-Bahdanau-Attention). 
 
 A high-quality Neural Machine Translation (NMT) system trained on the **WMT14 English–French dataset** using a **Transformer-based MarianMT architecture**.
 
