@@ -1,5 +1,12 @@
 # 🇬🇧 -> 🇫🇷 English to French Neural Machine Translation
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-orange?logo=pytorch)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-yellow?logo=huggingface)
+![Gradio](https://img.shields.io/badge/Gradio-WebApp-red?logo=gradio)
+![BLEU](https://img.shields.io/badge/BLEU-41.76-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 This project is upgrade version of [The Previous Model](https://github.com/AdityaKr015/NMT-Eng-to-French-Seq2Seq-Bahdanau-Attention). 
 
 A high-quality Neural Machine Translation (NMT) system trained on the **WMT14 English–French dataset** using a **Transformer-based MarianMT architecture**.
@@ -11,13 +18,6 @@ Fine-tuned Helsinki-NLP/opus-mt-tc-big-en-fr on WMT14 (fr-en) achieving 41.76 BL
 Live Demo: [![HuggingFace Space](https://img.shields.io/badge/🤗%20HuggingFace-Space-blue?style=for-the-badge)](https://huggingface.co/spaces/AdiKr25/En-fr-WMT14_Bleu41_chrF63)
 
 Model Hub: [![HuggingFace Model](https://img.shields.io/badge/🤗%20HuggingFace-Space-blue?style=for-the-badge)](https://huggingface.co/spaces/AdiKr25/En-fr-WMT14_Bleu41_chrF63)
-
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
-![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-orange?logo=pytorch)
-![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-yellow?logo=huggingface)
-![Gradio](https://img.shields.io/badge/Gradio-WebApp-red?logo=gradio)
-![BLEU](https://img.shields.io/badge/BLEU-41.76-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 📓 Training Notebook
 
